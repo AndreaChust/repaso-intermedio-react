@@ -3,12 +3,12 @@ function Country ({ infoCountry }) {
     return (
         <>
 
-        <div key="index" className="countries">
+        <li key={infoCountry.flag} className="countries">
             <div>{infoCountry.flag}</div>
             <h3>{infoCountry.name.common}</h3>
-            <h3>{infoCountry.capital}</h3>
-            <h4>{infoCountry.continents}</h4>
-        </div>
+            <h3>{infoCountry.capital[0]}</h3>
+            <h4>{infoCountry.continents[0]}</h4>
+        </li>
 
         </>
     )

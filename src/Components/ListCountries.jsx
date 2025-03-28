@@ -4,13 +4,13 @@ function ListCountries ({ countries }) {
     
     return (
         <>
-            <div className="cointaner">
+            <ul className="container">
                 {
                     countries.map((country) => {
                         return <Country infoCountry={country} />
                     })
                 }
-            </div>
+            </ul>
         
         
         </>

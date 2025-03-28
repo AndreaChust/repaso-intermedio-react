@@ -7,13 +7,18 @@ import { useState } from "react";
 
 function App() {
     const [filterCountry, setFilterCountry] = useState("");
+    const [nameContinent, setNameContinent] = useState("all");
 
     const changeFilter = (inputValue) => {
         setFilterCountry(inputValue)
     }
 
+    const changeContinent = (valueContinentInput) => {
+        setNameContinent(valueContinentInput);
+    }
+
     const filteredCountries = dataCountries.filter((country) => {
-      return country.name.common.includes(filterCountry)
+      return country.name.common.toLowerCase().includes(filterCountry.toLowerCase())
     }
   
   )
@@ -24,7 +29,7 @@ function App() {
 
 
     <Header />
-    <Filters onChangeFilterValue={changeFilter} />
+    <Filters onChangeFilterValue={changeFilter} onChangeContinent={changeContinent} />
     <ListCountries countries={filteredCountries} />
     </>
 
