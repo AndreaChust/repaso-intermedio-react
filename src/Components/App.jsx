@@ -23,6 +23,11 @@ function App() {
   
   )
 
+  const fileteredCountriesByContinent = filteredCountries.filter((country)=> {
+      return nameContinent === "all" ? true : country.continents[0] === nameContinent;
+
+  })
+
 
   return (
     <>
@@ -30,7 +35,7 @@ function App() {
 
     <Header />
     <Filters onChangeFilterValue={changeFilter} onChangeContinent={changeContinent} />
-    <ListCountries countries={filteredCountries} />
+    <ListCountries countries={fileteredCountriesByContinent} />
     </>
 
   )
